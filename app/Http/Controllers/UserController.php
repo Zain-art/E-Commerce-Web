@@ -17,6 +17,7 @@ class UserController extends Controller
        }else{
            $request->session()->put('user',$userdata);
            return redirect('/');
+           
        }
         // $datainput=$request->input();
         // return $datainput;

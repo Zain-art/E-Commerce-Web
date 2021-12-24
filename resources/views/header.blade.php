@@ -1,3 +1,12 @@
+<?php
+use App\Http\Controllers\ProductController;
+$total=0;
+if(Session::has('user')){ 
+
+}
+?>
+
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -8,7 +17,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">E-Commerce</a>
+      <a class="navbar-brand" href="/">E-Commerce</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,14 +38,26 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form navbar-left" action="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" name="query" class="form-control search-box" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Add TO Cart</a></li>
+        <li><a href="#">Add TO Cart ({{$total}})</a></li>
+        @if(Session::has('user'))
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Session::get('user')['name']}}
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="logout">Logout</a></li>
+          
+        </ul>
+      </li>
+      @else
+      <li><a href="login">Login Karo</a></li>
+      #@endif
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">

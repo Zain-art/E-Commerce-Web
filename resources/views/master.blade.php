@@ -41,5 +41,28 @@
             border-radius: 10px;
             line-height: 40px;
         }
+        .trend-img{
+            height: 370px;
+            
+        }
+        .trend-item{
+            float:left;
+            width: 20%;
+        }
+        .trending-product{
+            margin: 20px;
+        }
+        .detail-img{
+            height: 400px;
+        }
+        .cart-list-style{
+            border-bottom: 2px solid grey;
+            margin-bottom: 15px;
+            padding: 20px;
+        }
+        .remove-btn{
+            margin-top: 20px;
+        }
+
     </style>
 </html>
